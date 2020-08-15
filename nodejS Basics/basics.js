@@ -24,17 +24,19 @@ const server = http.createServer((req, res) => {
   if (url === "/message" && method === "POST") {
     const body = []
 
-    req.on("data", chunk => body.push(chunk))
+    // "data" & "end" are event listeners
 
-    req.on("end", () => {
-      const parsedBody = Buffer.concat(body).toString()
-      const message = parsedBody.split("=")[1]
+    req.on("data", chunk => body.push(chunk)) // <Buffer 6d 7b 78 45 a5 9b 00 77 76>
+
+    return req.on("end", () => {
+      const parsedBody = Buffer.concat(body).toString() // message=<value>
+      const message = parsedBody.split("=")[1] // <value>
       fs.writeFileSync("message.txt", message)
-    })
 
-    res.statusCode = 302
-    res.setHeader("Location", "/")
-    return res.end()
+      res.statusCode = 302
+      res.setHeader("Location", "/")
+      return res.end()
+    })
   }
 
   res.setHeader("Content-Type", "text/html")
