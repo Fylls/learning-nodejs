@@ -48,14 +48,16 @@ const requestHandler = (req, res) => {
 
 // module.exports = requestHandler
 
-// or
+// O R
 
-// module.exports = {
-//   handler: requestHandler,
-//   text: "exported text",
-// }
+// module.exports = {  handler: requestHandler  ,  text: "exported text"  }
 
-// or
+// O R
 
-module.exports.handler = requestHandler
-module.exports.text = "exported text"
+// module.exports.handler = requestHandler
+// module.exports.text = "exported text"
+
+// O R
+
+exports.handler = requestHandler
+exports.text = "exported text"
