@@ -1,0 +1,17 @@
+Debugging Node.js in Visual Studio Code
+Want to dive super-deep into the latest debugging capabilities Visual Studio Code gives you (for Node.js apps)?
+
+This article will be very helpful: https://code.visualstudio.com/docs/nodejs/nodejs-debugging
+
+======================================================================================================================
+
+Useful Resources & Links
+Attached, you find the source code for this section.
+
+When using my source code, make sure to run npm install in the extracted folder!
+
+Useful resources:
+
+More on debugging Node.js: https://nodejs.org/en/docs/guides/debugging-getting-started/
+
+Debugging Node in Visual Studio Code: https://code.visualstudio.com/docs/nodejs/nodejs-debugging
