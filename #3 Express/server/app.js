@@ -1,11 +1,30 @@
+// native modules
+const path = require("path")
+
+// dependencies
 const express = require("express")
+const bodyParser = require("body-parser")
+
+// request handler
 const app = express()
 
-// Route only if: GET "/"
-app.get("/user", (req, res) => res.send("<h1>welcome to user</h1>"))
+// middleware
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(express.static(path.join(__dirname, "public")))
 
-app.get("/lol", (req, res) => res.send("<h1>welcome to lol</h1>"))
+// Routes defs
+const adminRoutes = require("./routes/admin")
+const shopRoutes = require("./routes/shop")
 
-app.get("/", (req, res) => res.send("<h1>welcome to home</h1>"))
+// Routes
+app.use("/admin", adminRoutes)
+app.use(shopRoutes)
 
-app.listen(3000)
+// serving static file
+app.use((req, res) =>
+  res.status(404).sendFile(path.join(__dirname, "views", "404.html"))
+)
+
+// starting the server
+const PORT = 3000
+app.listen(PORT, () => console.log(`server started on port: ${PORT}`))

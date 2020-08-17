@@ -4,11 +4,14 @@
 // app is as well a valid "request handler"
 // const server = http.createServer(app)
 
+// in app requests get executed from top to bottom
+
 const express = require("express")
 const app = express()
 
 // APP.USE() => // adding a new middleware function (in all routes)
 
+// this will always run
 app.use((req, res, next) => {
   console.log("middleware")
   next()
