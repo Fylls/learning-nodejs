@@ -1,4 +1,4 @@
-# Work Out: NodeJS
+# Workout: NodeJS
 
 <br>
 
