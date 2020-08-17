@@ -10,6 +10,8 @@ const app = express()
 
 // middleware
 app.use(bodyParser.urlencoded({ extended: false }))
+
+// serving static files
 app.use(express.static(path.join(__dirname, "public")))
 
 // Routes defs
@@ -20,7 +22,7 @@ const shopRoutes = require("./routes/shop")
 app.use("/admin", adminRoutes)
 app.use(shopRoutes)
 
-// serving static file
+// 404 page not found
 app.use((req, res) =>
   res.status(404).sendFile(path.join(__dirname, "views", "404.html"))
 )
