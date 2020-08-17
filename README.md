@@ -5,7 +5,6 @@
 Here are some notes from a Udemy course I bought.
 <br>
 https://www.udemy.com/course/nodejs-the-complete-guide/
-https://www.youtube.com/watch?v=CqXjp1vtNwk
 
 <br>
 
