@@ -8,7 +8,7 @@ const bodyParser = require("body-parser")
 // request handler
 const app = express()
 
-// global config value
+// PUG - global config value
 app.set("view engine", "pug") // we want to compile using pug template engine
 app.set("views", "views") // here is the location of the view folder
 

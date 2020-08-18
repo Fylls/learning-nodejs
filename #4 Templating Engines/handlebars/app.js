@@ -9,7 +9,7 @@ const expressHbs = require("express-handlebars")
 // request handler
 const app = express()
 
-// handlebars
+// HANDLEBARS - global config value
 app.engine(
   "hbs",
   expressHbs({
@@ -19,8 +19,8 @@ app.engine(
   })
 )
 
-app.set("view engine", "hbs")
-app.set("views", "views")
+app.set("view engine", "hbs") // we want to compile using hbs template engine
+app.set("views", "views") // here is the location of the view folder
 
 // middleware
 app.use(bodyParser.urlencoded({ extended: false }))
