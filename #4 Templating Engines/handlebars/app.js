@@ -8,10 +8,6 @@ const bodyParser = require("body-parser")
 // request handler
 const app = express()
 
-// global config value
-app.set("view engine", "pug") // we want to compile using pug template engine
-app.set("views", "views") // here is the location of the view folder
-
 // middleware
 app.use(bodyParser.urlencoded({ extended: false }))
 
@@ -27,9 +23,9 @@ app.use("/admin", adminData.routes)
 app.use(shopRoutes)
 
 // 404 page not found
-app.use((req, res, next) => {
-  res.status(404).render("404", { pageTitle: "Page Not Found" })
-})
+app.use((req, res) =>
+  res.status(404).sendFile(path.join(__dirname, "views", "404.html"))
+)
 
 // starting the server
 const PORT = 3000
