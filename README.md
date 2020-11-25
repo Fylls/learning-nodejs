@@ -1,6 +1,6 @@
 <div align="center">
   
-# Workout: NodeJS
+# Learning: NodeJS
 
 <br>
 
